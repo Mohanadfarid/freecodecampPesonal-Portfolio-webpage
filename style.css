@@ -4,6 +4,7 @@
   box-sizing: border-box;
   padding: 0;
   margin: 0;
+  scroll-behavior: smooth;
 }
 
 body {
@@ -53,6 +54,7 @@ nav a:hover {
   font-size: 2.1rem;
 }
 h1 {
+  text-align: center;
   margin: 0 0 20px 0;
 }
 #welcome-section span {
@@ -79,28 +81,49 @@ h1 {
   border-bottom: 2px solid var(--main-white);
 }
 #projects .projects-container {
+  max-width: 1200px;
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
 }
 
-.project-card{
+.project-tile{
   width: 100%;
   margin: 15px 0;
 }
-.project-card img{
+.project-tile img{
   width: 100%;
-
 }
-.project-card .project-title{
+.project-tile .project-title{
   color: var(--main-white);
   text-decoration: none;
   background-color: var(--main-gray);
   text-align: center;
   padding: 20px 0;
   font-size: 1.2rem;
+
 }
-.project-card a{
+.project-title::before {
+  content: '< ';
+  color: orange;
+  opacity: 0;
+  transition: all 0.3s ease;
+}
+.project-title::after {
+  content: ' />';
+  color: orange;
+  opacity: 0;
+  transition: all 0.3s ease;
+}
+.project-title:hover::before {
+  opacity: 1;
+  transition: all 0.3s ease;
+}
+.project-title:hover::after {
+  opacity: 1;
+  transition: all 0.3s ease;
+}
+.project-tile a{
   display: flex;
   flex-direction: column; 
   text-decoration: none;
@@ -122,12 +145,16 @@ h1 {
 
 /* contact section */
 #Contact{
-  position: relative;
+  padding-top: 120px;
+
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
   background-color: var(--main-gray);
   color: white;
   text-align: center;
   min-height: calc(100vh - 60px);
-  padding: 50px 2px;
 }
 
 #Contact h2{
@@ -175,13 +202,13 @@ margin-right: 5px;
 
 /* footer */
 footer{
+
+  width: 100%;
   padding: 30px ;
   border-top: 4px solid var(--main-red);
   display: flex;
   justify-content: space-evenly;
   text-align: left;
-  position: absolute;
-  bottom: 0px;
 }
 footer p{
   font-size: 1.1rem;
@@ -190,4 +217,21 @@ footer p{
 footer a{
   color: var(--main-white);
   text-decoration: none;
+}
+@media only screen and (min-width: 730px){
+  .project-tile{
+    width: 45%;
+    margin: 15px 10px;
+  }
+  .project-tile img{
+    height: 280px;
+    width: 100%;
+  }
+}
+
+@media only screen and (min-width: 1090px){
+  .project-tile{
+    width: 30%;
+    margin: 15px 10px;
+  }
 }
