@@ -122,6 +122,7 @@ h1 {
 
 /* contact section */
 #Contact{
+  position: relative;
   background-color: var(--main-gray);
   color: white;
   text-align: center;
@@ -134,6 +135,11 @@ h1 {
 }
 #Contact h2{
   margin: 15px 0;
+}
+
+#Contact span{
+  font-style: italic;
+  margin-bottom: 10px;
 }
 
 #Contact ul{
@@ -164,5 +170,24 @@ margin-right: 5px;
   color: var(--main-white);
   font-size: 1.5rem;
   font-weight: 600;
+  text-decoration: none;
+}
+
+/* footer */
+footer{
+  padding: 30px ;
+  border-top: 4px solid var(--main-red);
+  display: flex;
+  justify-content: space-evenly;
+  text-align: left;
+  position: absolute;
+  bottom: 0px;
+}
+footer p{
+  font-size: 1.1rem;
+  margin: 10px 15px;
+}
+footer a{
+  color: var(--main-white);
   text-decoration: none;
 }
