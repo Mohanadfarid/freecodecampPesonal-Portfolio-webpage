@@ -23,6 +23,7 @@ body {
 nav {
   display: flex;
   justify-content: flex-end;
+  flex-wrap: wrap;
   position: fixed;
   padding: 0 30px;
   width: 100vw;
@@ -71,6 +72,10 @@ h1 {
   display: flex;
   flex-direction: column;
   align-items: center;
+}
+#projects img{
+background-position: center;
+background-size: cover;
 }
 #projects h2 {
   margin: 50px 0;
